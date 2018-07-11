@@ -14,7 +14,6 @@ class Main extends Component {
     }
 
     getAllValues = value => {
-        console.log(value);
         if (value === 0) {
             console.log(">>>pasok" + value + "<<<<<" + this.state.totalYearly);
             this.setState({
@@ -41,7 +40,6 @@ class Main extends Component {
                 style={{ marginLeft: "20px", marginRight: "20px" }}
             >
                 <h1>Sliding Scale Fee Calculator</h1>
-                {this.onCompute()}
                 <div style={{ width: "100%", display: "inline-block" }}>
                     <div
                         className="grid-container"

@@ -1,0 +1,44 @@
+[
+    {
+        "PatientID": 1,
+        "PatientName": "Bruce Wayne",
+        "Dob": "Nov 1 1969",
+        "MRNumber": 1234567,
+        "Relationship": "Head of Household"
+    },
+    {
+        "PatientID": 2,
+        "PatientName": "Dick Grayson",
+        "Dob": "Nov 2 1990",
+        "MRNumber": 1234567,
+        "Relationship": "Son"
+    },
+    {
+        "PatientID": 3,
+        "PatientName": "Jason Todd",
+        "Dob": "Nov 3 1990",
+        "MRNumber": 7654321,
+        "Relationship": "Son"
+    },
+    {
+        "PatientID": 4,
+        "PatientName": "Tim Drake",
+        "Dob": "Nov 4 1990",
+        "MRNumber": 4342344,
+        "Relationship": "Son"
+    },
+    {
+        "PatientID": 5,
+        "PatientName": "Stephanie Brown",
+        "Dob": "Nov 5 1990",
+        "MRNumber": 5542422,
+        "Relationship": "Daughter"
+    },
+    {
+        "PatientID": 6,
+        "PatientName": "Damian Wayne",
+        "Dob": "Nov 5 1990",
+        "MRNumber": 1234666,
+        "Relationship": "Son"
+    }
+]

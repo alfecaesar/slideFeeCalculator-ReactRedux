@@ -53,7 +53,7 @@ class Weekly extends Component {
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
                         <label>
-                            <strong>Week 1</strong>
+                            <strong>Week 1 Gross</strong>
                         </label>
                         <br />
                         <NumericTextBox
@@ -66,7 +66,7 @@ class Weekly extends Component {
                         <br />
                         <br />
                         <label>
-                            <strong>Week 2</strong>
+                            <strong>Week 2 Gross</strong>
                         </label>
                         <br />
                         <NumericTextBox
@@ -79,7 +79,7 @@ class Weekly extends Component {
                         <br />
                         <br />
                         <label>
-                            <strong>Week 3</strong>
+                            <strong>Week 3 Gross</strong>
                         </label>
                         <br />
                         <NumericTextBox
@@ -92,7 +92,7 @@ class Weekly extends Component {
                         <br />
                         <br />
                         <label>
-                            <strong>Week 4</strong>
+                            <strong>Week 4 Gross</strong>
                         </label>
                         <br />
                         <NumericTextBox

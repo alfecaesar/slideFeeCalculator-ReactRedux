@@ -48,7 +48,7 @@ class Unemployed extends Component {
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
                         <label>
-                            <strong>Amount per week</strong>
+                            <strong>Gross Amount per week</strong>
                         </label>
                         <br />
                         <NumericTextBox

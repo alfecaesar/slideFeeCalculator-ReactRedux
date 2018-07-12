@@ -36,7 +36,7 @@ class YearToDate extends Component {
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
                         <label>
-                            <strong>Amount</strong>
+                            <strong>Gross Amount</strong>
                         </label>
                         <br />
                         <NumericTextBox

@@ -3,13 +3,19 @@ import React, { Component } from "react";
 import Grid from "./Grid/";
 import Results from "./Results/";
 import Cards from "./Cards/";
+import Help from "./Help";
+
+import FontAwesome from "react-fontawesome";
+import { Tooltip } from "antd";
+
 class Main extends Component {
     constructor() {
         super();
 
         this.state = {
             totalYearly: 0,
-            overall: 0
+            overall: 0,
+            open: false
         };
     }
 
@@ -33,13 +39,38 @@ class Main extends Component {
         console.log("<<<labase:" + overall + ">>>>" + this.state.totalYearly);
         return overall;
     };
+
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
+
     render() {
         return (
-            <div
-                className="sliding-fee-container"
-                style={{ marginLeft: "20px", marginRight: "20px" }}
-            >
-                <h1>Sliding Scale Fee Calculator</h1>
+            <div className="sliding-fee-container" style={{ margin: "20px" }}>
+                <h1 style={{ float: "left" }}>Sliding Scale Fee Calculator</h1>
+
+                <Tooltip placement="bottom" title="Help">
+                    <FontAwesome
+                        name="question-circle"
+                        style={{
+                            fontSize: "30px",
+                            float: "right",
+                            cursor: "pointer"
+                        }}
+                        onClick={this.onOpenModal}
+                    />
+                </Tooltip>
+
+                <Help
+                    open={this.state.open}
+                    onCloseModal={this.onCloseModal}
+                    style={{ width: "700px" }}
+                />
+
                 <div style={{ width: "100%", display: "inline-block" }}>
                     <div
                         className="grid-container"

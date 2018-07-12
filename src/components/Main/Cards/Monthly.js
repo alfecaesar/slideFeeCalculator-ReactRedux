@@ -55,10 +55,10 @@ class Monthly extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={monthly}
-                            format="c2"
                             width="100%"
                             name="monthly"
                             onChange={this.onChangeMonthly}
+                            spinners={false}
                         />
                     </div>
                     <div

@@ -53,10 +53,10 @@ class Unemployed extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={amount}
-                            format="c2"
                             width="100%"
                             name="amount"
                             onChange={this.onChangeUnemployed}
+                            spinners={false}
                         />
                         <br />
                         <br />

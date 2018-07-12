@@ -41,9 +41,9 @@ class YearToDate extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={yeardateamount}
-                            format="c2"
                             width="100%"
                             name="weekone"
+                            spinners={false}
                         />
                         <br />
                         <br />

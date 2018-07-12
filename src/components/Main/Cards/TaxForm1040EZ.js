@@ -53,10 +53,10 @@ class TaxForm1040EZ extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={line4}
-                            format="c2"
                             width="100%"
                             name="line4"
                             onChange={this.onChange1040EZ}
+                            spinners={false}
                         />
                     </div>
                     <div

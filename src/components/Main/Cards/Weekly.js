@@ -58,10 +58,10 @@ class Weekly extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={weekone}
-                            format="c2"
                             width="100%"
                             name="weekone"
                             onChange={this.onChangeWeekly}
+                            spinners={false}
                         />
                         <br />
                         <br />
@@ -71,10 +71,10 @@ class Weekly extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={weektwo}
-                            format="c2"
                             width="100%"
                             name="weektwo"
                             onChange={this.onChangeWeekly}
+                            spinners={false}
                         />
                         <br />
                         <br />
@@ -84,10 +84,10 @@ class Weekly extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={weekthree}
-                            format="c2"
                             width="100%"
                             name="weekthree"
                             onChange={this.onChangeWeekly}
+                            spinners={false}
                         />
                         <br />
                         <br />
@@ -97,10 +97,10 @@ class Weekly extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={weekfour}
-                            format="c2"
                             width="100%"
                             name="weekfour"
                             onChange={this.onChangeWeekly}
+                            spinners={false}
                         />
                     </div>
                     <div

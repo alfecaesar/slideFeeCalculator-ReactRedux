@@ -53,10 +53,10 @@ class BiWeekly extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={biweekone}
-                            format="c2"
                             width="100%"
                             name="biweekone"
                             onChange={this.onChangeBiweekly}
+                            spinners={false}
                         />
                         <br />
                         <br />
@@ -66,10 +66,10 @@ class BiWeekly extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={biweektwo}
-                            format="c2"
                             width="100%"
                             name="biweektwo"
                             onChange={this.onChangeBiweekly}
+                            spinners={false}
                         />
                     </div>
                     <div

@@ -93,10 +93,10 @@ class TaxForm1040A extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={line8b}
-                            format="c2"
                             width="100%"
                             name="line8b"
                             onChange={this.onChange1040A}
+                            spinners={false}
                         />
                         <br />
                         <br />
@@ -111,10 +111,10 @@ class TaxForm1040A extends Component {
                                 <br />
                                 <NumericTextBox
                                     defaultValue={line11a}
-                                    format="c2"
                                     width="95%"
                                     name="line11a"
                                     onChange={this.onChange1040A}
+                                    spinners={false}
                                 />
                             </div>
                             <div style={{ display: "inline-block" }}>
@@ -124,10 +124,10 @@ class TaxForm1040A extends Component {
                                 <br />
                                 <NumericTextBox
                                     defaultValue={line11b}
-                                    format="c2"
                                     width="95%"
                                     name="line11b"
                                     onChange={this.onChange1040A}
+                                    spinners={false}
                                 />
                             </div>
                         </div>
@@ -143,10 +143,10 @@ class TaxForm1040A extends Component {
                                 <br />
                                 <NumericTextBox
                                     defaultValue={line12a}
-                                    format="c2"
                                     width="95%"
                                     name="line12a"
                                     onChange={this.onChange1040A}
+                                    spinners={false}
                                 />
                             </div>
                             <div style={{ display: "inline-block" }}>
@@ -156,10 +156,10 @@ class TaxForm1040A extends Component {
                                 <br />
                                 <NumericTextBox
                                     defaultValue={line12b}
-                                    format="c2"
                                     width="95%"
                                     name="line12b"
                                     onChange={this.onChange1040A}
+                                    spinners={false}
                                 />
                             </div>
                         </div>
@@ -175,10 +175,10 @@ class TaxForm1040A extends Component {
                                 <br />
                                 <NumericTextBox
                                     defaultValue={line14a}
-                                    format="c2"
                                     width="95%"
                                     name="line14a"
                                     onChange={this.onChange1040A}
+                                    spinners={false}
                                 />
                             </div>
                             <div style={{ display: "inline-block" }}>
@@ -188,10 +188,10 @@ class TaxForm1040A extends Component {
                                 <br />
                                 <NumericTextBox
                                     defaultValue={line14b}
-                                    format="c2"
                                     width="95%"
                                     name="line14b"
                                     onChange={this.onChange1040A}
+                                    spinners={false}
                                 />
                             </div>
                         </div>
@@ -202,10 +202,10 @@ class TaxForm1040A extends Component {
                         <br />
                         <NumericTextBox
                             defaultValue={line15}
-                            format="c2"
                             width="100%"
                             name="line15"
                             onChange={this.onChange1040A}
+                            spinners={false}
                         />
                     </div>
                     <div

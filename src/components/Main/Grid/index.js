@@ -16,23 +16,16 @@ class PatientGrid extends Component {
     render() {
         return (
             <div>
-                <Card title="Household">
-                    <Button style={{ background: "#37AF81", color: "white" }}>
-                        Add New
-                    </Button>
-                    <br />
-                    <br />
-                    <Grid data={this.state.gridData}>
-                        <Column field="PatientName" title="PatientName" />
-                        <Column field="Dob" title="Date of Birth" />
-                        <Column field="MRNumber" title="MR #" />
-                        <Column
-                            field="Relationship"
-                            title="Relationship To Head of Household"
-                            width="250px"
-                        />
-                    </Grid>
-                </Card>
+                <Grid data={this.state.gridData}>
+                    <Column field="PatientName" title="PatientName" />
+                    <Column field="Dob" title="Date of Birth" />
+                    <Column field="MRNumber" title="MR #" />
+                    <Column
+                        field="Relationship"
+                        title="Relationship To Head of Household"
+                        width="250px"
+                    />
+                </Grid>
             </div>
         );
     }

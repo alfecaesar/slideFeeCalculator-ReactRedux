@@ -10,6 +10,7 @@ import TaxForm1040A from "./TaxForm1040A";
 import TaxForm1040EZ from "./TaxForm1040EZ";
 import Unemployed from "./Unemployed";
 
+import Container from "../Common/Container";
 class Cards extends Component {
     constructor() {
         super();
@@ -24,8 +25,9 @@ class Cards extends Component {
     onRenderCards = () => {
         const { children } = this.state;
 
-        return children.map(function(child) {
-            return child;
+        return children.map(function(child, i) {
+            let counter = "cons_" + i;
+            return <Container key={counter}>{child}</Container>;
         });
     };
 

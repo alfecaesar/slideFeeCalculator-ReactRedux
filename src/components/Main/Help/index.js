@@ -4,7 +4,6 @@ import { Button } from "@progress/kendo-react-buttons";
 import pdf from "../../../assets/pdf/Sliding_Scale_Calculator_Training_Handout.pdf";
 
 const Help = ({ open, onCloseModal, style }) => {
-    console.log(style);
     return (
         <div>
             <Modal open={open} center style={style} showCloseIcon={false}>

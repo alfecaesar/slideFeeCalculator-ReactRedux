@@ -14,7 +14,8 @@ class AddSource extends Component {
             "Tax Form 1040",
             "Tax Form 1040A",
             "Tax Form 1040EZ",
-            "Unemployed"
+            "Unemployed",
+            "Homeless"
         ];
         return (
             <div className="card-container">

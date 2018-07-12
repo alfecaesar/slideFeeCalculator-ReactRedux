@@ -9,8 +9,10 @@ import TaxForm1040 from "./TaxForm1040";
 import TaxForm1040A from "./TaxForm1040A";
 import TaxForm1040EZ from "./TaxForm1040EZ";
 import Unemployed from "./Unemployed";
+import Homeless from "./Homeless";
 
 import Container from "../Common/Container";
+import "./Cards.css";
 class Cards extends Component {
     constructor() {
         super();
@@ -18,7 +20,8 @@ class Cards extends Component {
         this.state = {
             numChildren: 0,
             selectedIncome: "",
-            children: []
+            children: [],
+            displayAdd: true
         };
     }
 
@@ -33,6 +36,7 @@ class Cards extends Component {
 
     onChangeSource = e => {
         let newChild = {};
+        let displayAdd = true;
         switch (e.target.value) {
             case "Weekly":
                 newChild = (
@@ -106,6 +110,17 @@ class Cards extends Component {
                     />
                 );
                 break;
+            case "Homeless":
+                newChild = (
+                    <Homeless
+                        number={this.state.numChildren + 1}
+                        totalYearly={this.props.totalYearly}
+                        getAllValues={this.props.getAllValues}
+                    />
+                );
+                displayAdd = false;
+                this.props.checkHomeless(true);
+                break;
             default:
                 break;
         }
@@ -113,7 +128,8 @@ class Cards extends Component {
         this.setState({
             selectedIncome: e.target.value,
             numChildren: this.state.numChildren + 1,
-            children: [...this.state.children, newChild]
+            children: [...this.state.children, newChild],
+            displayAdd
         });
     };
 
@@ -126,7 +142,10 @@ class Cards extends Component {
                 }}
             >
                 {this.onRenderCards()}
-                <AddSource onChangeSource={this.onChangeSource} />
+
+                {this.state.displayAdd ? (
+                    <AddSource onChangeSource={this.onChangeSource} />
+                ) : null}
             </div>
         );
     }

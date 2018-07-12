@@ -15,7 +15,8 @@ class Main extends Component {
         this.state = {
             totalYearly: 0,
             overall: 0,
-            open: false
+            open: false,
+            homeless: ""
         };
     }
 
@@ -46,6 +47,15 @@ class Main extends Component {
 
     onCloseModal = () => {
         this.setState({ open: false });
+    };
+
+    checkHomeless = e => {
+        if (e) {
+            this.setState({
+                totalYearly: "Homeless",
+                overall: ""
+            });
+        }
     };
 
     render() {
@@ -101,6 +111,7 @@ class Main extends Component {
                         <Cards
                             totalYearly={this.state.totalYearly}
                             getAllValues={this.getAllValues}
+                            checkHomeless={this.checkHomeless}
                         />
                     </form>
                 </div>

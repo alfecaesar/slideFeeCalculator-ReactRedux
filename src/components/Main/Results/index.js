@@ -20,7 +20,6 @@ class Results extends Component {
         let pavRation =
             this.props.totalYearly /
             (this.state.pavLine + this.state.pavScale * (6 - 1));
-        console.log(pavRation);
         if (pavRation < 1) {
             return "Group B";
         } else if (pavRation > 1 && pavRation < 1.25) {
@@ -33,6 +32,8 @@ class Results extends Component {
             return "Group F";
         } else if (pavRation > 2) {
             return "Group G";
+        } else {
+            return "Homeless";
         }
     };
 
@@ -53,6 +54,8 @@ class Results extends Component {
             return "$85";
         } else if (pavRation > 2) {
             return "$100";
+        } else {
+            return "$1";
         }
     };
 
@@ -73,6 +76,8 @@ class Results extends Component {
             return "90%";
         } else if (pavRation > 2) {
             return "100%";
+        } else {
+            return "0%";
         }
     };
 

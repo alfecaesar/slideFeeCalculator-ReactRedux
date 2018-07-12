@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Card } from "antd";
 
 import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
+import MaskedInput from "react-text-mask";
+import moment from "moment";
 
 import "./Cards.css";
 class YearToDate extends Component {
@@ -9,13 +11,43 @@ class YearToDate extends Component {
         super();
 
         this.state = {
+            jobstart: moment()
+                .startOf("year")
+                .format("MM/DD/YYYY"),
             yeardateamount: 0,
-            yeardate: "",
+            datepaid: "",
             yeardateyear: 0
         };
     }
+
+    onChangeMask = e => {
+        this.setState({ [e.target.name]: e.target.value });
+    };
+
+    onChangeYearToDate = e => {
+        this.setState({
+            [e.target.props.name]: e.target.value
+        });
+    };
+
+    onCompute = () => {
+        const { jobstart, datepaid, yeardateamount } = this.state;
+
+        const momentstart = moment(jobstart);
+        const momentdatepaid = moment(datepaid);
+
+        const weeks = momentdatepaid.diff(momentstart, "week");
+        console.log(weeks);
+
+        const total = Math.round((yeardateamount / weeks) * 52);
+
+        this.props.getAllValues(total);
+
+        return total;
+    };
+
     render() {
-        const { yeardateamount, yeardateyear, yeardate } = this.state;
+        const { yeardateamount, yeardateyear, datepaid, jobstart } = this.state;
         return (
             <div className="card-container">
                 <Card
@@ -42,17 +74,48 @@ class YearToDate extends Component {
                         <NumericTextBox
                             defaultValue={yeardateamount}
                             width="100%"
-                            name="weekone"
+                            name="yeardateamount"
                             spinners={false}
+                            onChange={this.onChangeYearToDate}
                         />
                         <br />
                         <br />
-
                         <label>
-                            <strong>Date</strong>
+                            <strong>Job Start</strong>
                         </label>
                         <br />
-                        <Input value={yeardate} />
+                        <Input
+                            value={jobstart}
+                            width="100%"
+                            name="jobstart"
+                            disabled
+                        />
+                        <br />
+                        <br />
+                        <label>
+                            <strong>Date Paid</strong>
+                        </label>
+                        <br />
+                        <MaskedInput
+                            style={{ width: "100%" }}
+                            mask={[
+                                /\d/,
+                                /\d/,
+                                "/",
+                                /\d/,
+                                /\d/,
+                                "/",
+                                /\d/,
+                                /\d/,
+                                /\d/,
+                                /\d/
+                            ]}
+                            placeholder="MM/DD/YYYY"
+                            name="datepaid"
+                            value={datepaid}
+                            onChange={this.onChangeMask}
+                            className="k-textbox"
+                        />
                     </div>
                     <div
                         className="total-container"
@@ -62,7 +125,7 @@ class YearToDate extends Component {
                             marginLeft: "100px"
                         }}
                     >
-                        <strong>Yearly Total: {yeardateyear}</strong>
+                        <strong>Yearly Total: {this.onCompute()}</strong>
                     </div>
                 </Card>
             </div>

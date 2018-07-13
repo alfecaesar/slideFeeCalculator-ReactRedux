@@ -199,7 +199,7 @@ class TaxForm1040 extends Component {
                         </div>
                         <br />
                         <label>
-                            <strong>Line 20</strong>
+                            <strong>Line 22</strong>
                         </label>
                         <br />
                         <NumericTextBox

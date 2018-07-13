@@ -11,8 +11,19 @@ class BiWeekly extends Component {
         this.state = {
             biweekone: 0,
             biweektwo: 0,
-            incomesource: ""
+            incomesource: "",
+            total: 0
         };
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const total = (this.state.biweekone + this.state.biweektwo) * 13;
+        if (prevState.total !== total) {
+            this.props.getAllValues(total);
+            this.setState({
+                total
+            });
+        }
     }
 
     onChangeBiweekly = e => {
@@ -23,7 +34,7 @@ class BiWeekly extends Component {
 
     onCompute = () => {
         const total = (this.state.biweekone + this.state.biweektwo) * 13;
-        this.props.getAllValues(total);
+        //this.props.getAllValues(total);
         return total;
     };
 
@@ -93,7 +104,7 @@ class BiWeekly extends Component {
                             marginLeft: "100px"
                         }}
                     >
-                        <strong>Yearly Total: {this.onCompute()}</strong>
+                        <strong>Yearly Total: {this.state.total}</strong>
                     </div>
                 </Card>
             </div>

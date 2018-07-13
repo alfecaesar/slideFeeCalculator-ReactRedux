@@ -11,8 +11,21 @@ class Monthly extends Component {
         this.state = {
             monthly: 0,
             monthlyyear: 0,
-            incomesource: ""
+            incomesource: "",
+            total: 0
         };
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const { monthly } = this.state;
+
+        const total = monthly * 12;
+        if (prevState.total !== total) {
+            this.props.getAllValues(total);
+            this.setState({
+                total
+            });
+        }
     }
 
     onChangeMonthly = e => {
@@ -82,7 +95,7 @@ class Monthly extends Component {
                             marginLeft: "100px"
                         }}
                     >
-                        <strong>Yearly Total: {this.onCompute()}</strong>
+                        <strong>Yearly Total: {this.state.total}</strong>
                     </div>
                 </Card>
             </div>

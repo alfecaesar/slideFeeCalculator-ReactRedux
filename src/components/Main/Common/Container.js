@@ -20,7 +20,7 @@ const Container = ({ children, counter, onRemoveSource }) => {
                     onClick={() => onRemoveSource(counter)}
                 />
             </Tooltip>
-            <div> {children}</div>
+            <div> {React.cloneElement(children, { indexCon: counter })}</div>
         </div>
     );
 };

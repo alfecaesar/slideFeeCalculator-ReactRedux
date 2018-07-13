@@ -21,7 +21,7 @@ class AddSource extends Component {
             <div className="card-container">
                 <Card
                     style={{
-                        height: "500px",
+                        height: "550px",
                         width: "400px",
                         display: "flex",
                         justifyContent: "center",

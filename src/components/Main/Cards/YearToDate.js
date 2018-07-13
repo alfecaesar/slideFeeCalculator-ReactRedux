@@ -48,13 +48,7 @@ class YearToDate extends Component {
     };
 
     render() {
-        const {
-            yeardateamount,
-            yeardateyear,
-            datepaid,
-            jobstart,
-            incomesource
-        } = this.state;
+        const { yeardateamount, datepaid, jobstart, incomesource } = this.state;
         return (
             <div className="card-container">
                 <Card

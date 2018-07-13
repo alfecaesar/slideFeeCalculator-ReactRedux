@@ -7,6 +7,7 @@ import Help from "./Help";
 
 import FontAwesome from "react-fontawesome";
 import { Tooltip } from "antd";
+import { Button } from "@progress/kendo-react-buttons";
 
 class Main extends Component {
     constructor() {
@@ -16,11 +17,22 @@ class Main extends Component {
             totalYearly: 0,
             overall: 0,
             open: false,
-            homeless: ""
+            homeless: "",
+            origin: ""
         };
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        const overall = this.state.overall + this.state.totalYearly;
+        if (prevState.overall !== overall) {
+            this.setState({
+                overall
+            });
+        }
+    }
+
     getAllValues = value => {
+        /*onsole.log("val" + value);
         if (value === 0) {
             console.log(">>>pasok" + value + "<<<<<" + this.state.totalYearly);
             this.setState({
@@ -32,7 +44,7 @@ class Main extends Component {
             this.setState({
                 totalYearly: value
             });
-        }
+        }*/
     };
 
     onCompute = () => {
@@ -50,12 +62,13 @@ class Main extends Component {
     };
 
     checkHomeless = e => {
+        /*
         if (e) {
             this.setState({
                 totalYearly: "Homeless",
                 overall: ""
             });
-        }
+        }*/
     };
 
     render() {
@@ -104,7 +117,7 @@ class Main extends Component {
                             width: "50%"
                         }}
                     >
-                        <Results totalYearly={this.onCompute()} />
+                        <Results totalYearly={this.state.overall} />
                     </div>
                 </div>
 

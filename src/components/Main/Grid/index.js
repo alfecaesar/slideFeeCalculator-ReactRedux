@@ -77,7 +77,7 @@ class PatientGrid extends Component {
 
     onRemoveSelected() {
         var selectedData = this.gridApi.getSelectedRows();
-        var res = this.gridApi.updateRowData({ remove: selectedData });
+        this.gridApi.updateRowData({ remove: selectedData });
     }
 
     render() {

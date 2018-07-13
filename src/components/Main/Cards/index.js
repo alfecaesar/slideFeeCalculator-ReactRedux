@@ -25,13 +25,31 @@ class Cards extends Component {
         };
     }
 
+    onRemoveSource = e => {
+        const removeSource = this.state.children.slice();
+        removeSource.splice(e, 1);
+        this.setState({
+            children: removeSource
+        });
+
+        console.log(this.state.children);
+    };
+
     onRenderCards = () => {
         const { children } = this.state;
 
-        return children.map(function(child, i) {
-            let counter = "cons_" + i;
-            return <Container key={counter}>{child}</Container>;
-        });
+        return children.map(function(card, i) {
+            console.log(i);
+            return (
+                <Container
+                    onRemoveSource={this.onRemoveSource}
+                    key={i}
+                    counter={i}
+                >
+                    {card.child}
+                </Container>
+            );
+        }, this);
     };
 
     onChangeSource = e => {
@@ -124,11 +142,15 @@ class Cards extends Component {
             default:
                 break;
         }
+        let childs = {
+            child: newChild,
+            id: this.state.numChildren + 1
+        };
 
         this.setState({
             selectedIncome: e.target.value,
             numChildren: this.state.numChildren + 1,
-            children: [...this.state.children, newChild],
+            children: [...this.state.children, childs],
             displayAdd
         });
     };

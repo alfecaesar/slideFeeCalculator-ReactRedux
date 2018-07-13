@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "antd";
 
-import { NumericTextBox } from "@progress/kendo-react-inputs";
+import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
 
 import "./Cards.css";
 class Monthly extends Component {
@@ -10,7 +10,8 @@ class Monthly extends Component {
 
         this.state = {
             monthly: 0,
-            monthlyyear: 0
+            monthlyyear: 0,
+            incomesource: ""
         };
     }
 
@@ -29,12 +30,12 @@ class Monthly extends Component {
     };
 
     render() {
-        const { monthly } = this.state;
+        const { monthly, incomesource } = this.state;
         return (
             <div className="card-container">
                 <Card
                     style={{
-                        height: "500px",
+                        height: "550px",
                         width: "400px"
                     }}
                 >
@@ -45,10 +46,22 @@ class Monthly extends Component {
                         <br />
                         <strong>Monthly</strong>
                         <br />
-                        <span>Income Source Description</span>
                     </div>
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
+                        <label>
+                            <strong>Income Source Description</strong>
+                        </label>
+                        <br />
+                        <Input
+                            value={incomesource}
+                            style={{ width: "100%" }}
+                            name="incomesource"
+                            onChange={this.onChangeMonthly}
+                        />
+
+                        <br />
+                        <br />
                         <label>
                             <strong>Gross Amount</strong>
                         </label>

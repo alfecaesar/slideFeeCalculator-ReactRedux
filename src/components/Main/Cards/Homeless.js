@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 import { Card } from "antd";
-
+import { Input } from "@progress/kendo-react-inputs";
 import "./Cards.css";
 class Homeless extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            incomesource: ""
+        };
+    }
+
+    onChangeHomeless = e => {
+        this.setState({
+            [e.target.props.name]: e.target.value
+        });
+    };
+
     render() {
+        const { incomesource } = this.state;
         return (
             <div className="card-container">
                 <Card
                     style={{
-                        height: "500px",
+                        height: "550px",
                         width: "400px"
                     }}
                 >
@@ -18,11 +33,23 @@ class Homeless extends Component {
                         </span>
                         <br />
                         <strong>Homeless</strong>
-                        <br />
-                        <span>Income Source Description</span>
                     </div>
                     <br />
-                    <div className="form-container" style={{ width: "100%" }} />
+                    <div className="form-container" style={{ width: "100%" }}>
+                        <label>
+                            <strong>Income Source Description</strong>
+                        </label>
+                        <br />
+                        <Input
+                            value={incomesource}
+                            style={{ width: "100%" }}
+                            name="incomesource"
+                            onChange={this.onChangeHomeless}
+                        />
+
+                        <br />
+                        <br />
+                    </div>
                     <div
                         className="total-container"
                         style={{

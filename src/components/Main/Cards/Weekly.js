@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "antd";
 
-import { NumericTextBox } from "@progress/kendo-react-inputs";
+import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
 
 import "./Cards.css";
 class Weekly extends Component {
@@ -12,7 +12,8 @@ class Weekly extends Component {
             weekone: 0,
             weektwo: 0,
             weekthree: 0,
-            weekfour: 0
+            weekfour: 0,
+            incomesource: ""
         };
     }
 
@@ -32,12 +33,18 @@ class Weekly extends Component {
         return total;
     };
     render() {
-        const { weekone, weektwo, weekthree, weekfour } = this.state;
+        const {
+            weekone,
+            weektwo,
+            weekthree,
+            weekfour,
+            incomesource
+        } = this.state;
         return (
             <div className="card-container">
                 <Card
                     style={{
-                        height: "500px",
+                        height: "550px",
                         width: "400px"
                     }}
                 >
@@ -48,10 +55,22 @@ class Weekly extends Component {
                         <br />
                         <strong>Weekly</strong>
                         <br />
-                        <span>Income Source Description</span>
                     </div>
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
+                        <label>
+                            <strong>Income Source Description</strong>
+                        </label>
+                        <br />
+                        <Input
+                            value={incomesource}
+                            style={{ width: "100%" }}
+                            name="incomesource"
+                            onChange={this.onChangeWeekly}
+                        />
+
+                        <br />
+                        <br />
                         <label>
                             <strong>Week 1 Gross</strong>
                         </label>

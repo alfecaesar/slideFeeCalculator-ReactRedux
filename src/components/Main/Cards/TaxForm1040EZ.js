@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "antd";
 
-import { NumericTextBox } from "@progress/kendo-react-inputs";
+import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
 
 import "./Cards.css";
 class TaxForm1040EZ extends Component {
@@ -9,7 +9,8 @@ class TaxForm1040EZ extends Component {
         super();
 
         this.state = {
-            line4: 0
+            line4: 0,
+            incomesource: ""
         };
     }
 
@@ -27,12 +28,12 @@ class TaxForm1040EZ extends Component {
         return total;
     };
     render() {
-        const { line4 } = this.state;
+        const { line4, incomesource } = this.state;
         return (
             <div className="card-container">
                 <Card
                     style={{
-                        height: "500px",
+                        height: "550px",
                         width: "400px"
                     }}
                 >
@@ -43,10 +44,22 @@ class TaxForm1040EZ extends Component {
                         <br />
                         <strong>Tax Form 1040EZ</strong>
                         <br />
-                        <span>Income Source Description</span>
                     </div>
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
+                        <label>
+                            <strong>Income Source Description</strong>
+                        </label>
+                        <br />
+                        <Input
+                            value={incomesource}
+                            style={{ width: "100%" }}
+                            name="incomesource"
+                            onChange={this.onChange1040EZ}
+                        />
+
+                        <br />
+                        <br />
                         <label>
                             <strong>Line 4</strong>
                         </label>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "antd";
 
-import { NumericTextBox } from "@progress/kendo-react-inputs";
+import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
 
 import "./Cards.css";
 class TaxForm1040A extends Component {
@@ -16,7 +16,8 @@ class TaxForm1040A extends Component {
             line12b: 0,
             line14a: 0,
             line14b: 0,
-            line15: 0
+            line15: 0,
+            incomesource: ""
         };
     }
 
@@ -66,13 +67,14 @@ class TaxForm1040A extends Component {
             line12b,
             line14a,
             line14b,
-            line15
+            line15,
+            incomesource
         } = this.state;
         return (
             <div className="card-container">
                 <Card
                     style={{
-                        height: "500px",
+                        height: "550px",
                         width: "400px"
                     }}
                 >
@@ -83,10 +85,22 @@ class TaxForm1040A extends Component {
                         <br />
                         <strong>Tax Form 1040A</strong>
                         <br />
-                        <span>Income Source Description</span>
                     </div>
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
+                        <label>
+                            <strong>Income Source Description</strong>
+                        </label>
+                        <br />
+                        <Input
+                            value={incomesource}
+                            style={{ width: "100%" }}
+                            name="incomesource"
+                            onChange={this.onChange1040A}
+                        />
+
+                        <br />
+                        <br />
                         <label>
                             <strong>Line 8B</strong>
                         </label>

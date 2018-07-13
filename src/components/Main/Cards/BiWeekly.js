@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "antd";
 
-import { NumericTextBox } from "@progress/kendo-react-inputs";
+import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
 
 import "./Cards.css";
 class BiWeekly extends Component {
@@ -10,7 +10,8 @@ class BiWeekly extends Component {
 
         this.state = {
             biweekone: 0,
-            biweektwo: 0
+            biweektwo: 0,
+            incomesource: ""
         };
     }
 
@@ -27,12 +28,12 @@ class BiWeekly extends Component {
     };
 
     render() {
-        const { biweekone, biweektwo } = this.state;
+        const { biweekone, biweektwo, incomesource } = this.state;
         return (
             <div className="card-container">
                 <Card
                     style={{
-                        height: "500px",
+                        height: "550px",
                         width: "400px"
                     }}
                 >
@@ -43,10 +44,22 @@ class BiWeekly extends Component {
                         <br />
                         <strong>Bi-Weekly</strong>
                         <br />
-                        <span>Income Source Description</span>
                     </div>
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
+                        <label>
+                            <strong>Income Source Description</strong>
+                        </label>
+                        <br />
+                        <Input
+                            value={incomesource}
+                            style={{ width: "100%" }}
+                            name="incomesource"
+                            onChange={this.onChangeBiweekly}
+                        />
+
+                        <br />
+                        <br />
                         <label>
                             <strong>Week 1 Gross</strong>
                         </label>

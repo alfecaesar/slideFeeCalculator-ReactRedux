@@ -16,7 +16,8 @@ class YearToDate extends Component {
                 .format("MM/DD/YYYY"),
             yeardateamount: 0,
             datepaid: "",
-            yeardateyear: 0
+            yeardateyear: 0,
+            incomesource: ""
         };
     }
 
@@ -47,12 +48,18 @@ class YearToDate extends Component {
     };
 
     render() {
-        const { yeardateamount, yeardateyear, datepaid, jobstart } = this.state;
+        const {
+            yeardateamount,
+            yeardateyear,
+            datepaid,
+            jobstart,
+            incomesource
+        } = this.state;
         return (
             <div className="card-container">
                 <Card
                     style={{
-                        height: "500px",
+                        height: "550px",
                         width: "400px"
                     }}
                 >
@@ -63,10 +70,22 @@ class YearToDate extends Component {
                         <br />
                         <strong>Year to Date</strong>
                         <br />
-                        <span>Income Source Description</span>
                     </div>
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
+                        <label>
+                            <strong>Income Source Description</strong>
+                        </label>
+                        <br />
+                        <Input
+                            value={incomesource}
+                            style={{ width: "100%" }}
+                            name="incomesource"
+                            onChange={this.onChangeYearToDate}
+                        />
+
+                        <br />
+                        <br />
                         <label>
                             <strong>Gross Amount</strong>
                         </label>

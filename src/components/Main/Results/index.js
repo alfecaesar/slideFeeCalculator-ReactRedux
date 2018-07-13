@@ -85,10 +85,10 @@ class Results extends Component {
         return (
             <div>
                 <table
-                    width="100%"
+                    width="85%"
                     cellPadding="20px"
                     cellSpacing="0px"
-                    style={{ backgroundColor: "white" }}
+                    style={{ backgroundColor: "white", float: "right" }}
                 >
                     <tbody>
                         <tr>

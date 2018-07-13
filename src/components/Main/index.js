@@ -81,13 +81,17 @@ class Main extends Component {
                     style={{ width: "700px" }}
                 />
 
-                <div style={{ width: "100%", display: "inline-block" }}>
+                <div
+                    style={{
+                        width: "100%",
+                        display: "flex"
+                    }}
+                >
                     <div
                         className="grid-container"
                         style={{
                             display: "inline-block",
-                            verticalAlign: "top",
-                            width: "48%"
+                            width: "60%"
                         }}
                     >
                         <Grid />
@@ -97,9 +101,7 @@ class Main extends Component {
                         className="results-container"
                         style={{
                             display: "inline-block",
-                            verticalAlign: "top",
-                            float: "right",
-                            width: "48%"
+                            width: "50%"
                         }}
                     >
                         <Results totalYearly={this.onCompute()} />

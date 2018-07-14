@@ -7,7 +7,7 @@ const Container = ({ children, counter, onRemoveSource }) => {
         <div>
             <Tooltip placement="bottom" title="Remove">
                 <FontAwesome
-                    name="minus"
+                    name="close"
                     style={{
                         float: "right",
                         zIndex: "999999",

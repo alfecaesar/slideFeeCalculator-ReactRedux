@@ -34,6 +34,7 @@ class AddSource extends Component {
                         data={source}
                         style={{ width: "100%" }}
                         onChange={this.props.onChangeSource}
+                        value=""
                     />
                     <br />
                     <br />

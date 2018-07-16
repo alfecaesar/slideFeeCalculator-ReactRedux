@@ -12,7 +12,7 @@ const Container = ({ children, counter, onRemoveSource }) => {
                         float: "right",
                         zIndex: "999999",
                         marginTop: "10px",
-                        marginRight: " 20px",
+                        marginRight: " 10px",
                         position: "relative",
                         fontSize: "25px",
                         cursor: "pointer"

@@ -7,6 +7,7 @@ import "./Cards.css";
 class AddSource extends Component {
     render() {
         const source = [
+            "Hourly",
             "Weekly",
             "Bi-Weekly",
             "Monthly",

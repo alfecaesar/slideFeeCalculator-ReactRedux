@@ -10,6 +10,7 @@ import TaxForm1040A from "./TaxForm1040A";
 import TaxForm1040EZ from "./TaxForm1040EZ";
 import Unemployed from "./Unemployed";
 import Homeless from "./Homeless";
+import Hourly from "./Hourly";
 
 import Container from "../Common/Container";
 import "./Cards.css";
@@ -138,6 +139,15 @@ class Cards extends Component {
                 );
                 displayAdd = false;
                 this.props.checkHomeless(true);
+                break;
+            case "Hourly":
+                newChild = (
+                    <Hourly
+                        number={this.state.numChildren + 1}
+                        totalYearly={this.props.totalYearly}
+                        getAllValues={this.props.getAllValues}
+                    />
+                );
                 break;
             default:
                 break;

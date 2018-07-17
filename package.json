@@ -15,7 +15,7 @@
     "@progress/kendo-theme-default": "^2.54.0",
     "ag-grid": "^18.1.1",
     "ag-grid-react": "^18.1.0",
-    "antd": "^3.6.6",
+    "antd": "^3.7.0",
     "cldr-data": "^32.0.1",
     "lodash.isempty": "^4.4.0",
     "moment": "^2.22.2",

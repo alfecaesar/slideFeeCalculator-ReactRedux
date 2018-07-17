@@ -9,6 +9,8 @@ import FontAwesome from "react-fontawesome";
 import { Tooltip } from "antd";
 import { Button } from "@progress/kendo-react-buttons";
 
+import isEmpty from "lodash.isempty";
+
 class Main extends Component {
     constructor() {
         super();
@@ -18,7 +20,8 @@ class Main extends Component {
             overall: 0,
             open: false,
             homeless: "",
-            origin: ""
+            origin: "",
+            allsource: []
         };
     }
 
@@ -31,7 +34,16 @@ class Main extends Component {
         }
     }
 
-    getAllValues = value => {
+    getAllValues = (value, origin) => {
+        /*const { source } = this.state;
+        let newsource =[]
+        if(isEmpty(source)){
+            newsource = 
+            source.push();
+        } else{
+            var index = source.findIndex(a => a.origin == "yey");
+        }*/
+        //console.log(index);
         /*onsole.log("val" + value);
         if (value === 0) {
             console.log(">>>pasok" + value + "<<<<<" + this.state.totalYearly);

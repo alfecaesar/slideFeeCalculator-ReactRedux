@@ -19,7 +19,8 @@ class BiWeekly extends Component {
     componentDidUpdate(prevProps, prevState) {
         const total = (this.state.biweekone + this.state.biweektwo) * 13;
         if (prevState.total !== total) {
-            this.props.getAllValues(total);
+            const origin = "biweekly_" + this.props.indexCon;
+            this.props.getAllValues(total, origin);
             this.setState({
                 total
             });

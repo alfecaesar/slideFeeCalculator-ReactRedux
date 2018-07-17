@@ -77,7 +77,7 @@ class Results extends Component {
         } else if (pavRation > 2) {
             return "100%";
         } else {
-            return "0%";
+            return "70%";
         }
     };
 
@@ -124,7 +124,20 @@ class Results extends Component {
                                     textAlign: "right"
                                 }}
                             >
-                                Flat Payment Due
+                                Medical Visit Flat Fee
+                            </td>
+                            <td style={{ border: "1px solid lightgray" }}>
+                                {this.renderDue()}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                                style={{
+                                    border: "1px solid lightgray",
+                                    textAlign: "right"
+                                }}
+                            >
+                                Dental Payment Percentage
                             </td>
                             <td style={{ border: "1px solid lightgray" }}>
                                 {this.renderDue()}

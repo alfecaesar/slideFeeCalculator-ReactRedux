@@ -3,6 +3,7 @@ import { Input } from "@progress/kendo-react-inputs";
 import { DateInput } from "@progress/kendo-react-dateinputs";
 import { AgGridReact } from "ag-grid-react";
 
+import IncomeSource from "../IncomeSource/index";
 import FontAwesome from "react-fontawesome";
 import moment from "moment";
 import isEmpty from "lodash.isempty";
@@ -20,7 +21,8 @@ class PatientGrid extends Component {
             dob: new Date(),
             mrnumber: "",
             relationship: "",
-            rowSelection: "multiple"
+            rowSelection: "multiple",
+            open: false
         };
     }
 
@@ -80,6 +82,20 @@ class PatientGrid extends Component {
         this.gridApi.updateRowData({ remove: selectedData });
     }
 
+    onSelectionChanged = () => {
+        var selectedRows = this.gridApi.getSelectedRows();
+        if (!isEmpty(selectedRows)) {
+            console.log(selectedRows);
+            console.log(selectedRows[0].Id);
+            console.log(selectedRows[0].PatientName);
+            this.setState({ open: true });
+        }
+    };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
+
     render() {
         const { patientname, dob, mrnumber, relationship } = this.state;
         const columnDefs = [
@@ -94,6 +110,11 @@ class PatientGrid extends Component {
 
         return (
             <div>
+                <IncomeSource
+                    open={this.state.open}
+                    onCloseModal={this.onCloseModal}
+                    style={{ width: "700px", height: "300px" }}
+                />
                 <button onClick={this.onRemoveSelected.bind(this)}>
                     Remove Selected
                 </button>
@@ -109,6 +130,7 @@ class PatientGrid extends Component {
                         animateRows={true}
                         rowSelection={this.state.rowSelection}
                         onGridReady={this.onGridReady.bind(this)}
+                        onSelectionChanged={this.onSelectionChanged}
                     />
                 </div>
                 <br />

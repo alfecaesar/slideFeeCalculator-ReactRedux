@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Card } from "antd";
 
 import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
-
+import { Upload, Button, Icon, Card } from "antd";
 import "./Cards.css";
 class BiWeekly extends Component {
     constructor() {
@@ -45,7 +44,7 @@ class BiWeekly extends Component {
             <div className="card-container">
                 <Card
                     style={{
-                        height: "550px",
+                        height: "650px",
                         width: "400px"
                     }}
                 >
@@ -69,33 +68,46 @@ class BiWeekly extends Component {
                             name="incomesource"
                             onChange={this.onChangeBiweekly}
                         />
-
                         <br />
                         <br />
                         <label>
                             <strong>Week 1 Gross</strong>
                         </label>
                         <br />
-                        <NumericTextBox
-                            defaultValue={biweekone}
-                            width="100%"
-                            name="biweekone"
-                            onChange={this.onChangeBiweekly}
-                            spinners={false}
-                        />
+                        <div style={{ display: "flex" }}>
+                            <NumericTextBox
+                                defaultValue={biweekone}
+                                width="100%"
+                                name="biweekone"
+                                onChange={this.onChangeBiweekly}
+                                spinners={false}
+                            />
+                            <Upload showUploadList={false}>
+                                <Button>
+                                    <Icon type="paper-clip" />
+                                </Button>
+                            </Upload>
+                        </div>
                         <br />
                         <br />
                         <label>
                             <strong>Week 2 Gross</strong>
                         </label>
                         <br />
-                        <NumericTextBox
-                            defaultValue={biweektwo}
-                            width="100%"
-                            name="biweektwo"
-                            onChange={this.onChangeBiweekly}
-                            spinners={false}
-                        />
+                        <div style={{ display: "flex" }}>
+                            <NumericTextBox
+                                defaultValue={biweektwo}
+                                width="100%"
+                                name="biweektwo"
+                                onChange={this.onChangeBiweekly}
+                                spinners={false}
+                            />
+                            <Upload showUploadList={false}>
+                                <Button>
+                                    <Icon type="paper-clip" />
+                                </Button>
+                            </Upload>
+                        </div>
                     </div>
                     <div
                         className="total-container"

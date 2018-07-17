@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card } from "antd";
+import { Upload, Button, Icon, Card } from "antd";
 
 import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
 
@@ -33,7 +33,7 @@ class TaxForm1040EZ extends Component {
             <div className="card-container">
                 <Card
                     style={{
-                        height: "550px",
+                        height: "650px",
                         width: "400px"
                     }}
                 >
@@ -47,6 +47,13 @@ class TaxForm1040EZ extends Component {
                     </div>
                     <br />
                     <div className="form-container" style={{ width: "100%" }}>
+                        <Upload multiple={false}>
+                            <Button style={{ marginLeft: "50px" }}>
+                                <Icon type="paper-clip" /> Upload File(5MB Max
+                                size)
+                            </Button>
+                        </Upload>
+                        <br />
                         <label>
                             <strong>Income Source Description</strong>
                         </label>

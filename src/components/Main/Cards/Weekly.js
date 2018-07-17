@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Card } from "antd";
-
+import { Upload, Button, Icon, Card } from "antd";
 import { NumericTextBox, Input } from "@progress/kendo-react-inputs";
 
 import "./Cards.css";
@@ -44,7 +43,7 @@ class Weekly extends Component {
             <div className="card-container">
                 <Card
                     style={{
-                        height: "550px",
+                        height: "650px",
                         width: "400px"
                     }}
                 >
@@ -75,52 +74,80 @@ class Weekly extends Component {
                             <strong>Week 1 Gross</strong>
                         </label>
                         <br />
-                        <NumericTextBox
-                            defaultValue={weekone}
-                            width="100%"
-                            name="weekone"
-                            onChange={this.onChangeWeekly}
-                            spinners={false}
-                        />
+                        <div style={{ display: "flex" }}>
+                            <NumericTextBox
+                                defaultValue={weekone}
+                                width="100%"
+                                name="weekone"
+                                onChange={this.onChangeWeekly}
+                                spinners={false}
+                            />
+                            <Upload showUploadList={false}>
+                                <Button>
+                                    <Icon type="paper-clip" />
+                                </Button>
+                            </Upload>
+                        </div>
                         <br />
                         <br />
                         <label>
                             <strong>Week 2 Gross</strong>
                         </label>
                         <br />
-                        <NumericTextBox
-                            defaultValue={weektwo}
-                            width="100%"
-                            name="weektwo"
-                            onChange={this.onChangeWeekly}
-                            spinners={false}
-                        />
+                        <div style={{ display: "flex" }}>
+                            <NumericTextBox
+                                defaultValue={weektwo}
+                                width="100%"
+                                name="weektwo"
+                                onChange={this.onChangeWeekly}
+                                spinners={false}
+                            />
+                            <Upload showUploadList={false}>
+                                <Button>
+                                    <Icon type="paper-clip" />
+                                </Button>
+                            </Upload>
+                        </div>
                         <br />
                         <br />
                         <label>
                             <strong>Week 3 Gross</strong>
                         </label>
                         <br />
-                        <NumericTextBox
-                            defaultValue={weekthree}
-                            width="100%"
-                            name="weekthree"
-                            onChange={this.onChangeWeekly}
-                            spinners={false}
-                        />
+                        <div style={{ display: "flex" }}>
+                            <NumericTextBox
+                                defaultValue={weekthree}
+                                width="100%"
+                                name="weekthree"
+                                onChange={this.onChangeWeekly}
+                                spinners={false}
+                            />
+                            <Upload showUploadList={false}>
+                                <Button>
+                                    <Icon type="paper-clip" />
+                                </Button>
+                            </Upload>
+                        </div>
                         <br />
                         <br />
                         <label>
                             <strong>Week 4 Gross</strong>
                         </label>
                         <br />
-                        <NumericTextBox
-                            defaultValue={weekfour}
-                            width="100%"
-                            name="weekfour"
-                            onChange={this.onChangeWeekly}
-                            spinners={false}
-                        />
+                        <div style={{ display: "flex" }}>
+                            <NumericTextBox
+                                defaultValue={weekfour}
+                                width="100%"
+                                name="weekfour"
+                                onChange={this.onChangeWeekly}
+                                spinners={false}
+                            />
+                            <Upload showUploadList={false}>
+                                <Button>
+                                    <Icon type="paper-clip" />
+                                </Button>
+                            </Upload>
+                        </div>
                     </div>
                     <div
                         className="total-container"
